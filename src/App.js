@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Component } from "react";
+import { Header, Layout, Navigation, Drawer, Content } from "react-mdl";
+import Main from "./components/main";
+import About from "./components/about";
+import Projects from "./components/projects";
+import CaseStudy from "./components/casestudy";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="demo-big-content">
+        <Layout>
+          <Header title="n8jeffrey" scroll>
+            <Navigation>
+              <a href="/aboutme">About</a>
+              <a href="/projects">Projects</a>
+              <a href="/resume">Resume</a>
+              <a href="/contact">Contact</a>
+            </Navigation>
+          </Header>
+          <Drawer title="n8jeffrey">
+            <Navigation>
+              <a href="/aboutme">About</a>
+              <a href="/projects">Projects</a>
+              <a href="/resume">Resume</a>
+              <a href="/contact">Contact</a>
+            </Navigation>
+          </Drawer>
+          <Content>
+            <div className="page-content" />
+            <Main />
+            <About />
+            <Projects />
+            <CaseStudy />
+          </Content>
+        </Layout>
+      </div>
+    );
+  }
 }
 
 export default App;
