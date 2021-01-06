@@ -3,6 +3,10 @@
 
 /*colors #7E89FD - blue*/
 
+.mdl-layout__header {
+  background-color: #7e89fd !important;
+}
+
 .landing-page {
   color: white;
   margin: auto;

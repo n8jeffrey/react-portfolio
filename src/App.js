@@ -5,6 +5,7 @@ import Main from "./components/main";
 import About from "./components/about";
 import Projects from "./components/projects";
 import CaseStudy from "./components/casestudy";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 class App extends Component {
   render() {
@@ -13,10 +14,20 @@ class App extends Component {
         <Layout>
           <Header title="n8jeffrey" scroll>
             <Navigation>
-              <a href="/aboutme">About</a>
-              <a href="/projects">Projects</a>
-              <a href="/resume">Resume</a>
-              <a href="/contact">Contact</a>
+              <Link
+                activeClass="active"
+                to="#aboutme"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Test
+              </Link>
+              <a href="#aboutme">About</a>
+              <a href="#projects">Projects</a>
+              <a href="#casestudy">Resume</a>
+              <a href="#contact">Contact</a>
             </Navigation>
           </Header>
           <Drawer title="n8jeffrey">
@@ -30,9 +41,15 @@ class App extends Component {
           <Content>
             <div className="page-content" />
             <Main />
-            <About />
-            <Projects />
-            <CaseStudy />
+            <div id="aboutme">
+              <About />
+            </div>
+            <div id="projects">
+              <Projects />
+            </div>
+            <div id="casestudy">
+              <CaseStudy />
+            </div>
           </Content>
         </Layout>
       </div>
